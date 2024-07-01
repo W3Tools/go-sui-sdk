@@ -5,8 +5,8 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/coming-chat/go-sui/v2/sui_types"
-	"github.com/coming-chat/go-sui/v2/types"
+	"github.com/W3Tools/go-sui-sdk/v2/sui_types"
+	"github.com/W3Tools/go-sui-sdk/v2/types"
 	"github.com/stretchr/testify/require"
 )
 
@@ -57,6 +57,7 @@ func TestGetDelegatedStakes(t *testing.T) {
 func TestGetStakesByIds(t *testing.T) {
 	cli := TestnetClient(t)
 	owner, err := sui_types.NewAddressFromHex("0xd77955e670f42c1bc5e94b9e68e5fe9bdbed9134d784f2a14dfe5fc1b24b5d9f")
+	require.Nil(t, err)
 	stakes, err := cli.GetStakes(context.Background(), *owner)
 	require.Nil(t, err)
 	require.GreaterOrEqual(t, len(stakes), 1)

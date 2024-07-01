@@ -5,9 +5,9 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/coming-chat/go-sui/v2/lib"
-	"github.com/coming-chat/go-sui/v2/sui_types"
-	"github.com/coming-chat/go-sui/v2/types"
+	"github.com/W3Tools/go-sui-sdk/v2/lib"
+	"github.com/W3Tools/go-sui-sdk/v2/sui_types"
+	"github.com/W3Tools/go-sui-sdk/v2/types"
 )
 
 // NOTE: This copys the query limit from our Rust JSON RPC backend, this needs to be kept in sync!
@@ -158,7 +158,7 @@ func (c *Client) BatchGetFilteredObjectsOwnedByAddress(
 		if obj.Data == nil {
 			continue // error obj
 		}
-		if filter != nil && filter(obj.Data) == false {
+		if filter != nil && !filter(obj.Data) {
 			continue // ignore objects if non-specified type
 		}
 		objIds = append(objIds, obj.Data.ObjectId)

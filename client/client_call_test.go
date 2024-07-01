@@ -7,10 +7,10 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/coming-chat/go-sui/v2/lib"
-	"github.com/coming-chat/go-sui/v2/sui_types"
+	"github.com/W3Tools/go-sui-sdk/v2/lib"
+	"github.com/W3Tools/go-sui-sdk/v2/sui_types"
 
-	"github.com/coming-chat/go-sui/v2/types"
+	"github.com/W3Tools/go-sui-sdk/v2/types"
 	"github.com/stretchr/testify/require"
 )
 
@@ -591,7 +591,7 @@ func TestClient_ResolveNameServiceAddress(t *testing.T) {
 	require.Nil(t, err)
 	require.Equal(t, addr.String(), "0x6174c5bd8ab9bf492e159a64e102de66429cfcde4fa883466db7b03af28b3ce9")
 
-	addr, err = c.ResolveNameServiceAddress(context.Background(), "2222.suijjzzww")
+	_, err = c.ResolveNameServiceAddress(context.Background(), "2222.suijjzzww")
 	require.ErrorContains(t, err, "not found")
 }
 

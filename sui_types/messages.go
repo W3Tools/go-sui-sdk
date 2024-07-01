@@ -1,9 +1,9 @@
 package sui_types
 
 import (
-	"github.com/coming-chat/go-sui/v2/lib"
-	"github.com/coming-chat/go-sui/v2/move_types"
-	"github.com/coming-chat/go-sui/v2/sui_protocol"
+	"github.com/W3Tools/go-sui-sdk/v2/lib"
+	"github.com/W3Tools/go-sui-sdk/v2/move_types"
+	"github.com/W3Tools/go-sui-sdk/v2/sui_protocol"
 )
 
 type TransactionData struct {
@@ -43,8 +43,7 @@ type TransactionKind struct {
 	ConsensusCommitPrologue *ConsensusCommitPrologue
 }
 
-func (t TransactionKind) IsBcsEnum() {
-}
+func (t TransactionKind) IsBcsEnum() {}
 
 type ConsensusCommitPrologue struct {
 	Epoch             uint64
@@ -87,9 +86,7 @@ type Command struct {
 	}
 }
 
-func (c Command) IsBcsEnum() {
-
-}
+func (c Command) IsBcsEnum() {}
 
 type Argument struct {
 	GasCoin      *lib.EmptyEnum

@@ -6,8 +6,8 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/coming-chat/go-sui/v2/lib"
-	"github.com/coming-chat/go-sui/v2/sui_types"
+	"github.com/W3Tools/go-sui-sdk/v2/lib"
+	"github.com/W3Tools/go-sui-sdk/v2/sui_types"
 )
 
 type StakeStatus = lib.TagJson[Status]
@@ -39,7 +39,7 @@ type Stake struct {
 	StakeRequestEpoch SafeSuiBigInt[EpochId] `json:"stakeRequestEpoch"`
 	StakeActiveEpoch  SafeSuiBigInt[EpochId] `json:"stakeActiveEpoch"`
 	Principal         SafeSuiBigInt[uint64]  `json:"principal"`
-	StakeStatus       *StakeStatus           `json:"-,flatten"`
+	StakeStatus       *StakeStatus           `json:"-"`
 }
 
 func (s *Stake) IsActive() bool {

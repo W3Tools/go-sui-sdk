@@ -1,6 +1,6 @@
 module github.com/W3Tools/go-sui-sdk/v2
 
-go 1.22.1
+go 1.22
 
 require (
 	github.com/btcsuite/btcutil v1.0.2
